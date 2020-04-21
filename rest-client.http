@@ -1,0 +1,19 @@
+GET https://dou.ua/lenta/articles/mind-the-problem/ HTTP/1.1
+
+###
+
+POST https://dev.fotovramke.com/api/crm/auth/login HTTP/1.1 
+Content-Type: application/json
+
+{"password": "admin", "login": "admin"}
+
+###
+
+GET https://dev.fotovramke.com/api/crm/auth/me
+Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvZGV2LmZvdG92cmFta2UuY29tXC9hcGlcL2NybVwvYXV0aFwvbG9naW4iLCJpYXQiOjE1ODcyNDg4MzcsImV4cCI6MTU4NzQ2NDgzNywibmJmIjoxNTg3MjQ4ODM3LCJqdGkiOiJwelVRZ2E4elhzb3R5ZmFoIiwic3ViIjoxLCJwcnYiOiI1NTUwZjlmNmE0MGYzZmFkNDQ2NTAwMjlkM2FlZWQxOGVhNDJmMGFkIn0.y9jOIzHFDlMn9CtewuMAuuUPIBLnP8yP5CVq-aGsCAw"
+
+###
+POST https://example.com/users/new
+Content-Type: application/x-www-form-urlencoded
+
+name=mila&password=12345
