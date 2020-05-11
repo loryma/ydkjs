@@ -15,6 +15,12 @@ Lexical scope is associated with 'lexing' stage of compilation.
 
 The JS engine takes the AST for `var a = 2;` and turns it into a set of machine instructions to actually create a variable called a (including reserving memory, etc.), and then store a value into a.
 
+The connection between scopes that are nested within other scopes is called **scope chain**
+**Shadowing** in case of identical variables names variable in the closest scope is used. `let` can shadow `var` but `var` can't shadow `let`.
+
+**Hoisting** - every variable is created at the beginning of the scope it belongs to.
+When a function is defined a new scope is created.
+
 Closure - Functions maintain original scope irregardles of where they are executed.
 
 **Principle of Least Privilage (POLP). Principle of Least Exposure (POLE)**
