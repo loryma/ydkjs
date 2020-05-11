@@ -118,3 +118,39 @@ Values coerced to Boolean False:
 - +0, -0 and NaN
 - ""
 ```
+
+### Part 5. Async. Promise. Generators
+
+Issues with callbacks:
+
+-   lack of sequentiality
+-   lack of trustability
+
+Inversion of control - handing callback to another party to invoke
+
+**Promises**
+
+`new Promise(function(resolve, reject) {resolve()})` Function passed to Promise constructor is executed immediately. Promise is recognized as an object which has `.then()` method defined on it. (thenable)
+
+Promise is immutable once resolved.
+
+`Promise.all([])` takes an array of promises and returns new promise that waits on all of the to finish
+
+Passin non-thenable value `Promise.resolve()` returns a promise that's fullfilled. When passing promise same promise is returned.
+
+**Generators**
+Generator is a type of function where execution pauses on `yield` keyword.
+Calling generator returns iterator. values can be passes to generator and received from generator.
+
+```
+
+function* generatorFunction() {
+    const valuePassedInGenerator = yield "ValueReturntedFromGenertor"
+    return;
+}
+
+const it = generatorFunction();
+
+it.next();
+const res = it.next(valuePassedToGenerator) //{value: "ValueReturntedFromGenertor", done: false}
+```
